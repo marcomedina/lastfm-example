@@ -1,0 +1,39 @@
+%h1.center
+  Top 10 Songs and Artists
+#panel-main-top-artists.panel
+  %h1.center Top Artists
+  .panel-content
+    %ul.item-container
+
+      - @artists.each_with_index do |s,i|
+        %li.item
+          .item-index
+            = i+1
+          %a{:href => "#"}
+            %img{:alt => "", :src => s.image}
+          .item-desc
+            %a{:href => "#"}
+              = s.name
+            .item-note
+              Listeners:
+              = s.listeners
+
+#panel-main-top-songs.panel
+  %h1.center Top Songs
+  .panel-content
+    %ul.item-container
+      - @songs.each_with_index do |s,i|
+        %li.item
+          .item-index
+            = i+1
+          %a{:href => "#"}
+            %img{:alt => "", :src => s.image}
+          .item-desc
+            %a{:href => "#"}
+              = s.title
+            .item-note
+              Artist:
+              = s.artist
+            .item-note
+              Listeners:
+              = s.listeners

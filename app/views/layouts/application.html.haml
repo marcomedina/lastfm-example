@@ -1,0 +1,26 @@
+!!!
+%html
+  %head
+
+    = javascript_include_tag "application"
+    = stylesheet_link_tag    "application", :media => "all"
+    = yield :scripts
+    %title Coyalla</title>
+    %title Nearsoft | Nearshore Software Product Development
+  %body
+    #page-wrap
+      #header
+      =image_tag('nearsoft-logo.gif')
+      =image_tag('nearsoft-slogan.png')
+      %hr.ns-divisor/
+      #nav-container
+        %ul#nav
+          %li
+            -link_to 'Dashboard', '#'
+      #content-container
+        #content
+          =yield
+        .clear
+      #footer
+      %hr.ns-divisor/
+      .copyright © Nearsoft, Inc.  All rights reserved.
